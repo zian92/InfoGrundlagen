@@ -91,6 +91,10 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 		return data.isEmpty(); // Ueberpruefe, ob Liste leer.
 	}
 
+	/**
+	 * Fuegt der Schlange eine Schlange am Ende an. 
+	 * @param Q DoubleEndedQueue
+	 */
 	public void enqueQue(DoubleEndedQueue<T> Q) {
 		while (!Q.isEmpty()) {
 			this.enqueBack((T) Q.frontFront());
@@ -98,6 +102,10 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 		}
 	}
 
+	/**
+	 * Fuegt der Schlange eine Schlange am Anfang an.
+	 * @param Q DoubleEndedQueue
+	 */
 	public void enqueQueFront(DoubleEndedQueue<T> Q) {
 		while (!Q.isEmpty()) {
 			this.enqueFront((T) Q.frontFront());
@@ -105,6 +113,9 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 		}
 	}
 
+	/**
+	 * Schreibt alle Elemente der Schlange in die Konsole.
+	 */
 	public void printElements() {
 		System.out.println("#  " + "Print Elements");
 		System.out.println("#--" + "----------------------------------");

@@ -1,5 +1,9 @@
 package de.js;
 
+/**
+ * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
+ * 
+ */
 public class Main {
 
 	public Main() {
@@ -13,7 +17,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		/*
-		 * test Que 1
+		 * Que 1
 		 */
 		DoubleEndedQueue<Integer> q1 = new DoubleEndedQueue<Integer>();
 		q1.enqueBack(11);
@@ -35,15 +39,18 @@ public class Main {
 		q3.enqueFront(21);
 		q3.enqueFront(22);
 		q3.enqueFront(23);
+
+		/*
+		 * Tests
+		 */
 		q3.enqueQue(q2); // fuege Que 2 an
 		q3.enqueQueFront(q1); // fuege Que 1 forne an
 		q3.printElements();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) { // deque all
 			q3.dequeFront();
 		}
 		q3.printElements();
-		q3.frontFront();
 	}
 
 }
