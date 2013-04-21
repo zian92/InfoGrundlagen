@@ -9,20 +9,9 @@ package de.G04C;
 public class Main8 {
 
 	/**
-	 * Ruft die Methode zum Testen auf
+	 * Ruft die Methoden zum Testen auf
 	 */
 	public static void main(String[] args) {
-		Main8 test = new Main8();
-		test.run();
-	}
-
-	/**
-	 * Teste die klasse DoubleEndedQueue
-	 */
-	public void run() {
-		/*
-		 * Que 1
-		 */
 		DoubleEndedQueue<Integer> q1 = new DoubleEndedQueue<Integer>();
 		q1.enqueBack(11);
 		q1.enqueBack(12);
@@ -52,7 +41,10 @@ public class Main8 {
 		q3.printElements();
 
 		for (int i = 0; i < 10; i++) { // deque all
-			q3.dequeFront();
+			try {
+				q3.dequeFront();
+			} catch (Exception e) {
+			}
 		}
 		q3.printElements();
 	}
