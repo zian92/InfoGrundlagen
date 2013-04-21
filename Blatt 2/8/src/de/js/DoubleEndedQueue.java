@@ -1,7 +1,8 @@
 package de.js;
 
 /**
- * Eine Double-ended Queue (Deque) kombiniert die Eigenschaften einer FIFO-Queue und einer LIFO-Queue: man kann an beiden Enden der Warteschlange Elemente anfügen, einsehen und loschen.
+ * Eine Double-ended Queue (Deque) kombiniert die Eigenschaften einer FIFO-Queue und einer LIFO-Queue:
+ * man kann an beiden Enden der Warteschlange Elemente anfuegen, einsehen und loschen.
  * 
  * @author Jonas Stadler
  * 
@@ -9,11 +10,8 @@ package de.js;
  */
 public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 
-	/**
-	 * front = first
-	 * 
-	 * back = last
-	 */
+	// front = first
+	// back = last
 	private java.util.LinkedList<T> data;
 
 	public DoubleEndedQueue() {
@@ -21,12 +19,13 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 	}
 
 	/**
-	 * Coppy-Constructor, option zum anfügen der Schlange am Ende oder Anfang.
+	 * Coppy-Constructor, option zum anfuegen der Schlange am Ende oder Anfang.
 	 * 
 	 * @param Q
-	 *            DoubleEndedQueue<T>
+	 *            DoubleEndedQueue<T>, die angefuegt/erstellt werden soll
 	 * @param backOrFront
-	 *            EnqueFront = false
+	 *		<code>true</code>, wenn die Queue vorne angefuegt werden soll
+	 * 		<code>false</code>, wenn die Queue hinten angefuegt werden soll
 	 */
 	public DoubleEndedQueue(DoubleEndedQueue<T> Q, boolean backOrFront) {
 		if (!Q.isEmpty()) {
@@ -50,12 +49,14 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 
 	@Override
 	public void enqueFront(T element) {
-		if (element != null) data.addFirst(element); // sofern element nicht null, wird es der Liste an erster Stelle angefuegt.
+		if (element != null) data.addFirst(element); // sofern element nicht null,
+							     //wird es der Liste an erster Stelle angefuegt.
 	}
 
 	@Override
 	public void enqueBack(T element) {
-		if (element != null) data.addLast(element);// sofern element nicht null, wird es der Liste an letzter Stelle angefuegt.
+		if (element != null) data.addLast(element);// sofern element nicht null,
+							   //wird es der Liste an letzter Stelle angefuegt.
 	}
 
 	@Override
@@ -115,6 +116,10 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 
 	/**
 	 * Schreibt alle Elemente der Schlange in die Konsole.
+	 * 
+	 * Die funktion ist nicht in der Signatur vorgesehen,
+	 * ergibt aber auch keine Probleme an den angegeben Schnittstellen
+	 * und kann damit praktischerweise implementiert werden
 	 */
 	public void printElements() {
 		System.out.println("#  " + "Print Elements");
