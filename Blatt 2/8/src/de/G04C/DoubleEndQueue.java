@@ -1,4 +1,4 @@
-package de.js;
+package de.G04C;
 
 /**
  * 
@@ -23,13 +23,13 @@ public interface DoubleEndQueue<T> {
 	 * Gibt das erste Element wieder.
 	 * @return erste Element
 	 */
-	public T frontFront()throws IllegalStateException;
+	public T front()throws IllegalStateException;
 	
 	/**
 	 * Gibt das letzte Element wieder.
 	 * @return letzte Element
 	 */
-	public T frontBack()throws IllegalStateException;
+	public T back()throws IllegalStateException;
 	
 	/**
 	 * Loescht das erste Element.

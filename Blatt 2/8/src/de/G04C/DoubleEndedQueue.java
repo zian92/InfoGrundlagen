@@ -1,4 +1,4 @@
-package de.js;
+package de.G04C;
 
 /**
  * Eine Double-ended Queue (Deque) kombiniert die Eigenschaften einer FIFO-Queue und einer LIFO-Queue: man kann an beiden Enden der Warteschlange Elemente anfügen, einsehen und loschen.
@@ -59,31 +59,35 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 	}
 
 	@Override
-	public T frontFront() {
+	public T front() {
 		try {
 			return data.getFirst(); // gibt das erste Element wieder.
 		} catch (Exception e) {
-			return null; // fals ein Fehler auftritt, wird NULL zurueck gegeben.
+			throw new IllegalStateException(); // fals ein Fehler auftritt, wird eine Exception geworfen.
 		}
 	}
 
 	@Override
-	public T frontBack() {
+	public T back() {
 		try {
 			return data.getLast();// gibt das letzte Element wieder.
 		} catch (Exception e) {
-			return null;// fals ein Fehler auftritt, wird NULL zurueck gegeben.
+			throw new IllegalStateException(); // fals ein Fehler auftritt, wird eine Exception geworfen.
 		}
 	}
 
 	@Override
 	public void dequeFront() {
-		if (!data.isEmpty()) data.removeFirst(); // Falls die Liste nicht Leer ist, wird erste Element entfaernt.
+		if (!data.isEmpty())
+			data.removeFirst(); // Falls die Liste nicht Leer ist, wird erste Element entfaernt.
+		else throw new IllegalStateException();
 	}
 
 	@Override
 	public void dequeBack() {
-		if (!data.isEmpty()) data.removeLast();// Falls die Liste nicht Leer ist, wird letzte Element entfaernt.
+		if (!data.isEmpty())
+			data.removeLast();// Falls die Liste nicht Leer ist, wird letzte Element entfaernt.
+		else throw new IllegalStateException();
 	}
 
 	@Override
@@ -92,23 +96,27 @@ public class DoubleEndedQueue<T> implements DoubleEndQueue<T> {
 	}
 
 	/**
-	 * Fuegt der Schlange eine Schlange am Ende an. 
-	 * @param Q DoubleEndedQueue
+	 * Fuegt der Schlange eine Schlange am Ende an.
+	 * 
+	 * @param Q
+	 *            DoubleEndedQueue
 	 */
 	public void enqueQue(DoubleEndedQueue<T> Q) {
 		while (!Q.isEmpty()) {
-			this.enqueBack((T) Q.frontFront());
+			this.enqueBack((T) Q.front());
 			Q.dequeFront();
 		}
 	}
 
 	/**
 	 * Fuegt der Schlange eine Schlange am Anfang an.
-	 * @param Q DoubleEndedQueue
+	 * 
+	 * @param Q
+	 *            DoubleEndedQueue
 	 */
 	public void enqueQueFront(DoubleEndedQueue<T> Q) {
 		while (!Q.isEmpty()) {
-			this.enqueFront((T) Q.frontFront());
+			this.enqueFront((T) Q.front());
 			Q.dequeFront();
 		}
 	}

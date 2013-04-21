@@ -1,4 +1,4 @@
-package de.js;
+package de.G04C;
 
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
