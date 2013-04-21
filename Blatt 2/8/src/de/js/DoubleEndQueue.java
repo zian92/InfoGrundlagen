@@ -23,23 +23,23 @@ public interface DoubleEndQueue<T> {
 	 * Gibt das erste Element wieder.
 	 * @return erste Element
 	 */
-	public T frontFront();
+	public T frontFront()throws IllegalStateException;
 	
 	/**
 	 * Gibt das letzte Element wieder.
 	 * @return letzte Element
 	 */
-	public T frontBack();
+	public T frontBack()throws IllegalStateException;
 	
 	/**
 	 * Loescht das erste Element.
 	 */
-	public void dequeFront();
+	public void dequeFront()throws IllegalStateException;
 	
 	/**
 	 * Loescht das letzte Element.
 	 */
-	public void dequeBack();
+	public void dequeBack()throws IllegalStateException;
 	
 	/**
 	 * Ueberprueft ob die Schlange leer ist.

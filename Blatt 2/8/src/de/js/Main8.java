@@ -4,9 +4,9 @@ package de.js;
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
  * 
  */
-public class Main {
+public class Main8 {
 
-	public Main() {
+	public Main8() {
 		// TODO Auto-generated constructor stub
 	}
 
