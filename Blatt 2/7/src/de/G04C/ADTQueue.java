@@ -1,4 +1,4 @@
-package de.js; //Zum Kompilieren hinzugefuegt, sonst wurde nichts geaendert
+package de.G04C; //Zum Kompilieren hinzugefuegt, sonst wurde nichts geaendert
 
 /**
  *  Schnittstelle fuer Realisierungen des ADT Queue.

@@ -1,4 +1,4 @@
-package de.js;
+package de.G04C;
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
  * 
@@ -46,7 +46,7 @@ public class Que<T> implements ADTQueue<T> {
 	public T front() throws IllegalStateException {
 		if (!isEmpty())
 			return data[first]; // falls array nicht leer, wird das erste elment der schlange zurueckt gegeben
-		else return null;
+		else throw new IllegalStateException();
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class Que<T> implements ADTQueue<T> {
 		if (!isEmpty()) {
 			this.changeFirst(); // veraendert das zaehler des ersten elementes
 			count--; // setzt den count des faeldes herunter
-		}
+		} else throw new IllegalStateException();
 	}
 
 	/**

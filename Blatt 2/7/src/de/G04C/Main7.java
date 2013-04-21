@@ -1,4 +1,5 @@
-package de.js;
+package de.G04C;
+
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
  * 
@@ -6,7 +7,6 @@ package de.js;
 public class Main7 {
 
 	public Main7() {
-		
 	}
 
 	/**
@@ -15,14 +15,17 @@ public class Main7 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Que<Integer> q = new Que<Integer>(Integer.class,3);
+		Que<Integer> q = new Que<Integer>(Integer.class, 3);
 		q.enqueue(1);
 		q.enqueue(2);
 		q.enqueue(3);
 		q.enqueue(4);
-		q.dequeue();
-		q.dequeue();
-		q.dequeue();
-		q.dequeue();
+		try {
+			q.dequeue();
+			q.dequeue();
+			q.dequeue();
+			q.dequeue();
+		} catch (Exception e) {
+		}
 	}
 }
