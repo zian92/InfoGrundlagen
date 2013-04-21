@@ -3,19 +3,23 @@ package de.G04C;
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
  * 
+ * Testklasse zu Aufgabe 8, Blatt 2
+ * 
  */
 public class Main8 {
 
-	public Main8() {
-		// TODO Auto-generated constructor stub
+	/**
+	 * Ruft die Methode zum Testen auf
+	 */
+	public static void main(String[] args) {
+		Main8 test = new Main8();
+		test.run();
 	}
 
 	/**
 	 * Teste die klasse DoubleEndedQueue
-	 * 
-	 * @param args
 	 */
-	public static void main(String[] args) {
+	public void run() {
 		/*
 		 * Que 1
 		 */
