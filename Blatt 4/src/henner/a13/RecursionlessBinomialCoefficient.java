@@ -5,6 +5,8 @@
  *  Auswertung eines Binomialkoeffizienten ohne Rekursion.
  *  Blatt 4, Aufgabe 13(b), Sommersemester 2013
  */
+package henner.a13;
+import stuff.Stapel;
 public class RecursionlessBinomialCoefficient {
 
     /**
@@ -40,11 +42,11 @@ public class RecursionlessBinomialCoefficient {
 			stapel.pop();					//n zugäglich machen
 			int actN = (Integer) stapel.top();	//n
 			stapel.push(actK);				//Stapel wiederherstellen
-		
+			if (print) {printStack(stapel);}
 			//2.a Oberstes Problem von S bearbeiten
 			if (actK == 0 || actN == actK) {	//wenn k = 0 ist oder n = k ist,
 				z++;							//ist der Binomialkoeffizienten laut Def.  1
-				if (print) {printStack(stapel);}	//Stapel ausgeben, wenn gefordert
+	//Stapel ausgeben, wenn gefordert
 				stapel.pop(); 			//dieses k entfernen
 				stapel.pop();			//zugehoeriges n entfernen, da Problem geloest
 			}
