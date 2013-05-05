@@ -1,13 +1,14 @@
-package jonas.a15;
+package jonas.a16;
 
 public class Aufgabe16 {
-	private int[] feld = null;
 
-	public Aufgabe16(int[] feld) {
-		this.feld = feld;
+	public static void main(String[] args) {
+
+		int temp = getMinIndex(new int[] { 13, 232, 45, 67, 4, 323, 4, 54, 54, 23, 23, });
+		System.out.println(temp);
 	}
 
-	public int getMinIndex() {
+	public static int getMinIndex(int[] feld) throws NullPointerException {
 		if (feld.length == 0 || feld == null) throw new NullPointerException();
 		int minIndex = 0;
 		int minVal = feld[0];
