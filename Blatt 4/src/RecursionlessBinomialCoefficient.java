@@ -53,7 +53,7 @@ public class RecursionlessBinomialCoefficient {
      * Hilfsmethode um den Problemstapel der eval Methode in der Konsole auszugeben.
      * @param stack		Problemstapel der eval Methode
      */
-    public void printStack(Stapel<int[]> stack){
+    private void printStack(Stapel<int[]> stack){
     	Stapel<int[]> t_stack = new Stapel<int[]>();
     	while(!stack.isEmpty()){
     		t_stack.push(stack.top());

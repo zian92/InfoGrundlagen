@@ -30,15 +30,32 @@ public class BinomialCoefficient {
 	 * @return	Wert des Binomialkoeffizienten (n ueber k)
 	 */
 	public int eval(){
-		int bnc = 1;
-		if(!(k == 0 || k == n)){
-			for(int i = n - k + 1; i <= n; i++)
-				bnc *= i;
-			for(int i = 1; i <= k; i++)
-				bnc /= i;
-		}
 		
-		return bnc;
+/* ***** Iterative Berechnung des Binomialkoeffizienten *****/
+//		int bnc = 1;
+//		if(!(k == 0 || k == n)){
+//			for(int i = n - k + 1; i <= n; i++)
+//				bnc *= i;
+//			for(int i = 1; i <= k; i++)
+//				bnc /= i;
+//		}
+//		
+//		return bnc;
+		return calcBinomRecursive(getN(), getK());
+	}
+	
+	/**
+	 * Rekursiv definierte Hilfsfunktion um den Binomialkoeffizienten mit der Funktionsdefinition vom
+	 * Aufgabenblatt auszurechnen
+	 * @param n		aus (n ueber k)
+	 * @param k		aus (n ueber k)
+	 * @return		den Wert des Binomialkoeffizienten
+	 */
+	private int calcBinomRecursive(int n, int k){
+		if(k == 0 || n == k)
+			return 1;
+		else
+			return calcBinomRecursive(n-1, k) + calcBinomRecursive(n-1, k-1);
 	}
 	
 	/**
