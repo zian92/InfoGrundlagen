@@ -1,0 +1,59 @@
+package henner.a13;
+/**
+ * Klasse zur Realisierung der Definition des Binomialkoeffizienten (n ueber k), der fuer zwei
+ * Natuerliche Zahlen n und k mit n >= k angibt, wie viele k-elementige Teilmengen es von einer n-elementigen Menge gibt.
+ * @author Henner
+ *
+ */
+public class BinomialCoefficient {
+	
+	private int n;
+	private int k;
+	
+	public BinomialCoefficient(int n, int k) throws IllegalArgumentException{
+		if(n < k || n < 0 || k < 0)
+			throw new IllegalArgumentException("n oder k sind ungueltig gewaehlt.");
+		this.n = n;
+		this.k = k;
+	}
+	
+	/**
+	 * Selektor um n des Binomialkoeffizienten (n ueber k) zu erhalten.
+	 * @return	n	wie in (n ueber k)
+	 */
+
+	public int getN() {
+		return n;
+	}
+	/**
+	 * Selektor um n des Binomialkoeffizienten (n ueber k) zu setzen.
+	 * @param n		wie in (n ueber k)
+	 * @throws IllegalArgumentException		falls n negativ oder kleiner k gewaehlt wird
+	 */
+	public void setN(int newN)  throws IllegalArgumentException{
+		if(newN < 0 || newN < this.k)
+			throw new IllegalArgumentException("Ungueltiger Wert fuer n");
+		this.n = newN;
+	}
+
+	/**
+	 * Selektor-Methode um k des Binomialkoeffizienten (n ueber k) zu erhalten.
+	 * @returnk k	wie in (n ueber k)
+	 */
+
+	public int getK() {
+		return k;
+	}
+
+	/**
+	 * Selektor um k des Binomialkoeffizienten (n ueber k) zu setzen.
+	 * @param k		wie in (n ueber k)
+	 * @throws IllegalArgumentException		falls k negativ oder groesser n gewaehlt wird
+	 */
+	public void setK(int newK)  throws IllegalArgumentException{
+		if(newK < 0 || this.n < newK)
+			throw new IllegalArgumentException("Ungueltiger Wert fuer k");
+		this.k = newK;
+	}
+
+}

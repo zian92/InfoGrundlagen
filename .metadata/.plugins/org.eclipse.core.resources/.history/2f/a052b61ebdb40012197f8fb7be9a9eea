@@ -1,0 +1,13 @@
+package henner.a13;
+
+public class BinomialCoefficient {
+	
+	private int n;
+	private int k;
+	
+	public BinomialCoefficient(int n, int k) throws IllegalArgumentException{
+		this.n = n;
+		this.k = k;
+	}
+
+}

@@ -1,0 +1,129 @@
+/**
+ *  Auswertung eines Binomialkoeffizienten ohne Rekursion.
+ *  Blatt 4, Aufgabe 13(b), Sommersemester 2013
+ */
+import henner.a13.*;
+public class RecursionlessBinomialCoefficient {
+
+    /**
+     *  Berechne den Wert eines Binomialkoeffizienten mit Hilfe
+     *  eines iterativen Verfahrens unter Verwendung eines Stapels.
+     *  Gib zusaetzliche Informationen aus, wenn ein entsprechender
+     *  Parameter gesetzt ist. Es erfolgt keine zusaetzliche 
+     *  Ueberpruefung der Parameter, da dies bereits im Konstruktor
+     *  der Klasse <code>BinomialCoefficient</code> abgefangen wird.
+     *  @param n Parameter n fuer den Binomialkoeffizienten
+     *  @param k Parameter k fuer den Binomialkoeffizienten
+     *  @param print Zusaetzliche Informationen werden genau dann
+     *         ausgegeben, wenn dieser Parameter den Wert <code>true</code> hat.
+     *  @return berechneter Wert des Binomialkoeffizienten
+     */
+    public int eval(int n, int k, boolean print) {
+
+	int z = 0;
+	
+	int[] prob = new int[2];
+	prob[0] = n; prob[1] = k;
+	
+	Stapel<int[]> problemStack = new Stapel<int[]>();
+	problemStack.push(prob.clone());
+	
+	while(!problemStack.isEmpty()){
+		if(print)
+			printStack(problemStack);
+		prob = problemStack.top();
+		problemStack.pop();
+		if(prob[1] == 0 || prob[1] == prob[0])
+			z++;
+		else {
+			prob[0]--;
+			problemStack.push(prob.clone());
+			prob[1]--;
+			problemStack.push(prob.clone());
+		}
+	}
+
+	return z;
+
+    }
+    
+    public void printStack(Stapel<int[]> stack){
+    	Stapel<int[]> t_stack = new Stapel<int[]>();
+    	while(!stack.isEmpty()){
+    		t_stack.push(stack.top());
+    		stack.pop();
+    	}
+    	while(!t_stack.isEmpty()){
+    		System.out.println("(" + t_stack.)
+    	}
+    	
+    }
+    
+
+    /**
+     *  Ueberpruefe, ob die Methode eval das gleiche Ergebnis
+     *  liefert wie <code>BinomialCoefficient.eval</code>.
+     *  Gib zusaetzliche Informationen aus, wenn ein entsprechender
+     *  Parameter gesetzt ist. Es erfolgt keine zusaetzliche 
+     *  Ueberpruefung der Parameter, da dies bereits im Konstruktor
+     *  der Klasse <code>BinomialCoefficient</code> abgefangen wird.
+     *  @param n Parameter n fuer den Binomialkoeffizienten
+     *  @param k Parameter k fuer den Binomialkoeffizienten
+     *  @param print Zusaetzliche Informationen werden genau dann
+     *         ausgegeben, wenn dieser Parameter den Wert <code>true</code> hat.
+     *  @return <code>true</code>, falls die Ergebnisse uebereinstimmen,
+     *          <code>false</code> sonst.
+     */
+    public boolean testEval(int n, int k, boolean print) {
+
+	boolean passed = true;
+
+	int vergleichswert = new BinomialCoefficient(n, k).eval();
+	int wert           = eval(n, k, print);
+	
+	if (wert != vergleichswert) {
+	    System.out.println("testEval(" + n + "," + k + ") "
+			       + "ergab " + wert + " an Stelle von " 
+			       + vergleichswert + "."); 
+	    passed = false;
+	}
+
+	return passed;
+
+    }
+
+    /*
+      Es duerfen weitere Methoden ergaenzt werden.
+     */
+
+    /**
+     *  Ueberprueft verschiedene Grenzfaelle der Implementierung.
+     */
+    public void run() {
+
+	boolean passed = true;
+	boolean passedAll = true;
+
+	passed = passed && testEval(10,5,true);
+	passedAll = passedAll && passed;
+
+	passed = passed && testEval(9,9,true);
+	passedAll = passedAll && passed;
+
+	passed = passed && testEval(5,3,true);
+	passedAll = passedAll && passed;
+
+	if (passedAll) {
+	    System.out.println("*** Alle Tests bestanden: " + passedAll);
+	}
+	else {
+	    System.out.println("*** Nicht alle Tests bestanden: " + passedAll);
+	}
+    }
+
+
+    public static void main(String[] args) {
+	RecursionlessBinomialCoefficient rbc = new RecursionlessBinomialCoefficient();
+	rbc.run();	
+    }
+}

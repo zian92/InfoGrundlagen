@@ -1,0 +1,41 @@
+package henner.a13;
+
+public class BinomialCoefficient {
+	
+	private int n;
+	private int k;
+	
+	public BinomialCoefficient(int n, int k) throws IllegalArgumentException{
+		if(n < k )
+			throw new IllegalArgumentException("n oder k sind ungueltig gewaehlt.");
+		this.n = n;
+		this.k = k;
+	}
+	
+	/**
+	 * Selektor-Methode um n des Binomialkoeffizienten (n ueber k) zu erhalten.
+	 * @return	n	wie in (n ueber k)
+	 */
+
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	/**
+	 * Selektor-Methode um k des Binomialkoeffizienten (n ueber k) zu erhalten.
+	 * @returnk k	wie in (n ueber k)
+	 */
+
+	public int getK() {
+		return k;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+}

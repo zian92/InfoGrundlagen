@@ -1,0 +1,9 @@
+package henner.a19;
+
+
+public class OilPaintEffect {
+	
+	public void run(){
+	}
+
+}

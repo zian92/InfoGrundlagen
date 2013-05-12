@@ -1,0 +1,19 @@
+package henner.a19;
+
+import java.awt.Color;
+import java.util.HashMap;
+public class OilPaintEffect {
+	
+	private HashMap<Color, Integer> hMap;
+	
+	public void run(){
+		hMap = new HashMap<Color, Integer>();
+		bookClasses.Picture;
+	}
+	
+	public static void main(String[] args){
+		new OilPaintEffect().run();
+
+	}
+
+}
