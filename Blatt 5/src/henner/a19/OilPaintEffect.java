@@ -7,7 +7,9 @@ import bookClasses.Picture;
 
 public class OilPaintEffect {
 	
+	@SuppressWarnings("unused")
 	private HashMap<Color, Integer> hMap;
+	@SuppressWarnings("unused")
 	private Picture pic;
 	
 	public void run(){
