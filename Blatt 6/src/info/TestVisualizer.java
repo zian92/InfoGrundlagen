@@ -1,5 +1,8 @@
 package info;
 
+/**
+ * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
+ */
 import java.util.Random;
 
 import javax.swing.JFrame;
@@ -40,26 +43,21 @@ public class TestVisualizer
 		int n = 200;
 		Integer[] data = createNumbers(n);
 
-	        av = new ArrayVisualizer(n);
+		av = new ArrayVisualizer(n);
 
-		av.setData(data);
-		av.update();
+		av.setData(data); // setzt die daten
+		av.update();// updated die daten
 
-		JFrame f = new JFrame();
-		f.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-	    	f.setSize(n, n);
-	    	f.add(av);
-	    	f.setVisible( true );
-		
+		// erzeugt fenster und setzt die einstellungen
+		JFrame f = new JFrame("G04-C A 232");
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(n, n);
+		f.add(av);
+		f.setVisible(true);
 	}
 
 	public static void main(String[] args) {
 		TestVisualizer tv = new TestVisualizer();
-
 		tv.run();
-
-		/*
-		 * Bei Verwendung von javax.swing: SwingUtilities.invokeLater(tv);
-		 */
 	}
 }
