@@ -1,4 +1,4 @@
-package jonas.a23;
+package jonas.a24;
 
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell

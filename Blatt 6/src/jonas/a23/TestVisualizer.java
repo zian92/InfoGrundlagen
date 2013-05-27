@@ -1,4 +1,4 @@
-package info;
+package jonas.a23;
 
 /**
  * Uebungsgruppe G04-C Henner Niehaus, Jonas Stadler, Eva Poell
@@ -7,7 +7,6 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
-import jonas.a23.ArrayVisualizer;
 
 /* Bei der Verwendung von javax.swing mindestens:
  import javax.swing.SwingUtilities;
@@ -32,7 +31,7 @@ public class TestVisualizer
 	 */
 	private Integer[] createNumbers(int n) {
 		Integer[] data = new Integer[n];
-		Random r = new Random(n);
+		Random r = new Random(n-1);
 		for (int i = 0; i < n; i++) {
 			data[i] = r.nextInt(n);
 		}
