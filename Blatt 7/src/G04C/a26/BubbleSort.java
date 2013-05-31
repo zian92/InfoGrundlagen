@@ -22,6 +22,7 @@ public class BubbleSort extends VisualizableSort {
 		av.paintComponent(av.getGraphics());
 		count = 0;
 		int len = a.length - 2;
+
 		while (!this.checkArray(a)) {// wiederhohlung solange array nicht sortiert
 			for (int i = 0; i <= len; i++) {
 				if (a[i] > a[i + 1]) { // falls das erste Element groesser ist, wird es getauscht
@@ -30,6 +31,16 @@ public class BubbleSort extends VisualizableSort {
 				}
 			}
 		}
+	}
+
+	public void sortR(Integer[] a) {
+		for (int i = 0; i <= a.length - 2; i++) {
+			if (a[i] > a[i + 1]) { // falls das erste Element groesser ist, wird es getauscht
+				this.swap(a, i, i + 1);
+				count++;
+			}
+		}
+		if (!this.checkArray(a)) sortR(a);
 	}
 
 	public int getCount() {

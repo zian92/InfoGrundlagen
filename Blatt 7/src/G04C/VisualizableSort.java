@@ -42,7 +42,7 @@ abstract public class VisualizableSort {
 		/*
 		 * nach angegebenen zeitintervall wird die Zeichenflaeche erneut gezeichnet und so möglich änderungen angezeigt
 		 */
-		timer.schedule(new RemindTask(), 0, milliseconds * 1000); // mili * 1000 = Sekunden
+		timer.schedule(new RemindTask(), 0, milliseconds); // mili * 1000 = Sekunden
 	}
 
 	/**
