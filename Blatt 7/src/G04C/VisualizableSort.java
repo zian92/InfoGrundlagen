@@ -1,8 +1,5 @@
 package G04C;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -42,10 +39,10 @@ abstract public class VisualizableSort {
 	 */
 	public void update(long milliseconds) {
 		timer = new Timer();
-		timer.schedule(new RemindTask(), 0, milliseconds * 1000); // mili * 1000 = Sekunden
 		/*
-		 * nach angegebenen zeitintervall wird die Zeichenflaeche erneut gezeichnet und so möglich änderungen angezeigt 
+		 * nach angegebenen zeitintervall wird die Zeichenflaeche erneut gezeichnet und so möglich änderungen angezeigt
 		 */
+		timer.schedule(new RemindTask(), 0, milliseconds * 1000); // mili * 1000 = Sekunden
 	}
 
 	/**
@@ -78,7 +75,6 @@ abstract public class VisualizableSort {
 	 *            Auszugebendes Feld.
 	 */
 	public void printArray(Integer[] a) {
-
 		if (a != null) {
 
 			System.out.println("Das Array enthaelt " + a.length + " Elemente.");
@@ -88,7 +84,6 @@ abstract public class VisualizableSort {
 			System.out.println();
 			System.out.println();
 		}
-
 	}
 
 	/**
@@ -101,7 +96,8 @@ abstract public class VisualizableSort {
 	public boolean checkArray(Integer[] a) {
 		boolean isSorted = true;
 		for (int i = 0; i < a.length - 1; i++) {
-			isSorted = isSorted && (a[i].compareTo(a[i + 1]) <= 1);
+			if(!isSorted) break; // damit der algo nicht immer das ganze Array durchlaufen muss, auch wenn bereits klar ist, dass es min. eine Fehlstellung gibt  
+			isSorted = isSorted && (a[i].compareTo(a[i + 1]) <= 0);
 		}
 		if (isSorted) {
 			System.out.println("Das Array ist sortiert.");

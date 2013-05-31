@@ -23,12 +23,14 @@ public class TestVisualizer implements Runnable {
 		RandomArrayGenerator rg = new RandomArrayGenerator(200);
 		av = new ArrayVisualizer(200, (byte) 2);
 
+		// Integer[] data = { 349, 2, 234, 35, 345, 345, 346, 356, 23, 4, 7, 7, 3, 5, 2, 4, 6, 56, };
 		Integer[] data = rg.createPermutation();
+
 		av.setData(data);
 		setupFrame();
 
 		BubbleSort bubble = new BubbleSort(av);
-		bubble.update();
+
 		bubble.sort(data);
 	}
 

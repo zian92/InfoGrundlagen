@@ -5,15 +5,34 @@ import G04C.VisualizableSort;
 
 public class BubbleSort extends VisualizableSort {
 
+	private int count;
+
 	public BubbleSort(ArrayVisualizer av) {
 		super(av);
-		// TODO Auto-generated constructor stub
+	}
+
+	public BubbleSort(ArrayVisualizer av, Integer[] d) {
+		super(av);
+		av.setData(d);
+		av.paintComponent(av.getGraphics());
 	}
 
 	@Override
 	public void sort(Integer[] a) {
-		// TODO Auto-generated method stub
-
+		av.paintComponent(av.getGraphics());
+		count = 0;
+		int len = a.length - 2;
+		while (!this.checkArray(a)) {// wiederhohlung solange array nicht sortiert
+			for (int i = 0; i <= len; i++) {
+				if (a[i] > a[i + 1]) { // falls das erste Element groesser ist, wird es getauscht
+					this.swap(a, i, i + 1);
+					count++;
+				}
+			}
+		}
 	}
 
+	public int getCount() {
+		return count;
+	}
 }
