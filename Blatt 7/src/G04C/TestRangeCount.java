@@ -1,5 +1,7 @@
 package G04C;
 
+import G04C.a28.RangeCount;
+
 /**
  * Testklasse zu Aufgabe 28 / Blatt 7 / Sommersemester 2013
  */
@@ -36,7 +38,7 @@ public class TestRangeCount {
 		@SuppressWarnings("unused")
 		Integer[] data = { 3, 1, 4, 1, 5, 9, 2, 6, 5 };
 
-		RangeCount rc = new RangeCount();
+		RangeCount rc = new RangeCount(data);
 
 		// Alle Werte liegen im Bereich.
 		passed = passed && checkExpect(rc, 0, 10, 9);
