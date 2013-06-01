@@ -38,11 +38,16 @@ abstract public class VisualizableSort {
 	 *            Anzahl zu wartender Millisekunden
 	 */
 	public void update(long milliseconds) {
-		timer = new Timer();
-		/*
-		 * nach angegebenen zeitintervall wird die Zeichenflaeche erneut gezeichnet und so möglich änderungen angezeigt
-		 */
-		timer.schedule(new RemindTask(), 0, milliseconds); // mili * 1000 = Sekunden
+		// veranlasst die Laufzeitumgebung dazu, den durch die Parameter spezifizierten Bereich des ArrayVisualizers (~> JPanel) sofort neuzuzeichnen
+		// durch ein explizites aufrufen der ueberschriebenen paintComponent Methode in ArrayVisualizier.
+		av.paintImmediately(0, 0, av.getWidth(), av.getHeight());
+		
+		// laesst diesen Thread (da er der Aufrufer der statischen Methode Thread.sleep ist)  fuer die angegebene Zeit in Millisekunden pausieren.
+		try{
+			Thread.sleep(milliseconds);
+		} catch(InterruptedException e){
+
+		}
 	}
 
 	/**
@@ -105,22 +110,5 @@ abstract public class VisualizableSort {
 			System.out.println("Das Array ist nicht sortiert!");
 		}
 		return isSorted;
-	}
-
-	/**
-	 * Klasse zum aktuallisieren des Timers
-	 * 
-	 * @author Jonas
-	 * 
-	 */
-	class RemindTask extends TimerTask {
-		/**
-		 * Funktion die nach angegebenem Zeitintervall aufgerufen wird.
-		 */
-		public void run() {
-			System.out.println("Update");
-			av.paintComponent(av.getGraphics());// Oberfläche des Panels wird neu gezeichnet
-			// timer.cancel(); //Terminate the timer thread
-		}
 	}
 }
