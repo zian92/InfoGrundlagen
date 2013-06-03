@@ -31,15 +31,25 @@ public class TestVisualizer implements Runnable {
 
 		av.setData(data);
 		setupFrame();
+//		// BubbleSort
+//		BubbleSort bubble = new BubbleSort(av);
+//		bubble.sort(data);
 
-		BubbleSort bubble = new BubbleSort(av);
-		bubble.sort(data);
-
+//		// BubbleSort rekursiv
+//		BubbleSort bubble = new BubbleSort(av);
+//		bubble.sortR(data);
+		
+//		// SelectionSort
 //		 SelectionSort selec = new SelectionSort(av);
 //		 selec.sort(data);
-		
+
+//		// InsertionSort
 //		 InsertionSort ins = new InsertionSort(av);
 //		 ins.sort(data);
+		
+//		// InsertionSort rekursiv
+//		 InsertionSort ins = new InsertionSort(av);
+//		 ins.sortR(data);
 	}
 
 	public static void main(String[] args) {

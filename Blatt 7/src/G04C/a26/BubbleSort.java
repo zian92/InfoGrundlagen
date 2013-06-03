@@ -59,6 +59,7 @@ public class BubbleSort extends VisualizableSort {
 			if (a[i] > a[i + 1]) { // falls das erste Element groesser ist, wird es getauscht
 				this.swap(a, i, i + 1);
 			}
+			update();
 		}
 		if (!this.checkArray(a)) sortR(a);
 	}

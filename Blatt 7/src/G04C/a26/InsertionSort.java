@@ -34,5 +34,37 @@ public class InsertionSort extends VisualizableSort {
 			a[searchIndex + 1] = tempVal;
 		}
 	}
+	
+	/**
+	 * Wrapper Methode zur rekursiven Implementation von Insertion Sort
+	 * @param a	Referenz auf das zu sortierende Integer Array Objekt
+	 */
+	public void sortR(Integer[] a) {
+
+		sortInner(a, 1);
+		
+	}
+	
+	/**
+	 * Eigentliche InsertionSort Methode (rekursiv)
+	 * @param a	das zu sortierende Array
+	 * @param i	Index des aktuell einzusortierenden Elements
+	 */
+	private void sortInner(Integer[] a, int i) {
+		int searchIndex = 0;
+		int tempVal = 0;
+			
+		tempVal = a[i];
+		searchIndex = i - 1;
+		while((searchIndex >= 0) && (a[searchIndex] > tempVal)){
+			a[searchIndex + 1] = a[searchIndex];
+			searchIndex--;
+			update();
+		}
+		a[searchIndex + 1] = tempVal;
+		i++;
+		if(i < a.length)
+			sortInner(a, i);
+	}
 
 }
