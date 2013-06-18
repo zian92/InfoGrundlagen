@@ -1,6 +1,8 @@
 package g04_C;
 
 import g04_C.sortings.BubbleSort;
+import g04_C.sortings.InsertionSort;
+import g04_C.sortings.SelectionSort;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
@@ -27,7 +29,7 @@ public class TestVisualizer implements Runnable {
 		av.setData(data);
 		setupFrame();
 
-		BubbleSort b = new BubbleSort(av);
+		SelectionSort b = new SelectionSort(av);
 		b.sort(data);
 		System.out.println("Durchläufe: "+b.getCount());
 		System.out.println("Vertauschungen: "+b.getCountSwap());
